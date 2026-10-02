@@ -3,8 +3,6 @@
 Short dialogue game in Godot 4.6, about three minutes. You play Yuri Gagarin on
 Vostok 1, talking to Korolev on the radio and to the voices in his head.
 
-The dialogue system is carried over from A Long Ride.
-
 ## Where things are
 
 - `scenes/main.tscn`, `main.gd`: the scene, and the code that steps through the dialogue
