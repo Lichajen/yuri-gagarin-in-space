@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Exchange" format=3 uid="uid://u8chfde6es3d"]
+
+[ext_resource type="Script" uid="uid://bmold5q5uayal" path="res://scripts/dialogue_option.gd" id="1_option"]
+[ext_resource type="Script" uid="uid://cfmpvfu6nlaqa" path="res://scripts/exchange.gd" id="2_exchange"]
+
+[sub_resource type="Resource" id="Option_1"]
+script = ExtResource("1_option")
+text = "\"Valya... the girls...\""
+next_id = "family_children"
+
+[sub_resource type="Resource" id="Option_2"]
+script = ExtResource("1_option")
+text = "\"The ones who come after me. The ones who will make the next great steps.\""
+next_id = "legacy_engineer"
+
+[sub_resource type="Resource" id="Option_3"]
+script = ExtResource("1_option")
+text = "\"The view.\""
+next_id = "view_kedr"
+
+[resource]
+script = ExtResource("2_exchange")
+id = "never_see"
+options = Array[ExtResource("1_option")]([SubResource("Option_1"), SubResource("Option_2"), SubResource("Option_3")])

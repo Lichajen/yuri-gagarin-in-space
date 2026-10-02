@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Beat" format=3]
+
+[ext_resource type="Script" path="res://scripts/beat.gd" id="1_beat"]
+[ext_resource type="Resource" path="res://data/characters/korolev.tres" id="1_speaker"]
+
+[resource]
+script = ExtResource("1_beat")
+id = "view_korolev"
+speaker = ExtResource("1_speaker")
+line = "One day they will, Yura. On the ships we make next."
+next_id = "korolev_fading"

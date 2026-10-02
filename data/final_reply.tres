@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Exchange" format=3 uid="uid://jjt5kmhxdhbx"]
+
+[ext_resource type="Script" uid="uid://bmold5q5uayal" path="res://scripts/dialogue_option.gd" id="1_option"]
+[ext_resource type="Script" uid="uid://cfmpvfu6nlaqa" path="res://scripts/exchange.gd" id="2_exchange"]
+
+[sub_resource type="Resource" id="Option_1"]
+script = ExtResource("1_option")
+text = "\"Poyekhali.\" (Let's go)"
+next_id = "korolev_final_silence"
+
+[sub_resource type="Resource" id="Option_2"]
+script = ExtResource("1_option")
+text = "\"Zarya-1, Kedr. Feeling fine. Continuing the flight.\""
+next_id = "korolev_final_silence"
+
+[sub_resource type="Resource" id="Option_3"]
+script = ExtResource("1_option")
+text = "\"It's not your fault, Sergei Pavlovich. Just keep going.\""
+next_id = "korolev_final_silence"
+
+[resource]
+script = ExtResource("2_exchange")
+id = "final_reply"
+options = Array[ExtResource("1_option")]([SubResource("Option_1"), SubResource("Option_2"), SubResource("Option_3")])

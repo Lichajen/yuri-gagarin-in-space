@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://cwtntvr1y53ok"]
+
+[ext_resource type="Script" uid="uid://cfw5adli7npue" path="res://scripts/character.gd" id="1_char"]
+[ext_resource type="Texture2D" uid="uid://286rdxjempjg" path="res://assets/portraits/korolev.png" id="2_portrait"]
+
+[resource]
+script = ExtResource("1_char")
+display_name = "Korolev"
+portrait = ExtResource("2_portrait")
+uses_radio = true

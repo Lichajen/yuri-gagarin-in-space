@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Beat" format=3]
+
+[ext_resource type="Script" path="res://scripts/beat.gd" id="1_beat"]
+[ext_resource type="Resource" path="res://data/characters/klushino_boy.tres" id="1_speaker"]
+
+[resource]
+script = ExtResource("1_beat")
+id = "family_children"
+speaker = ExtResource("1_speaker")
+line = "Lenochka is two. Galochka is five weeks old. They won't remember your face."
+next_id = "family_name"

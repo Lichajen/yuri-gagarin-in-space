@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Beat" format=3]
+
+[ext_resource type="Script" path="res://scripts/beat.gd" id="1_beat"]
+[ext_resource type="Resource" path="res://data/characters/engineer.tres" id="1_speaker"]
+
+[resource]
+script = ExtResource("1_beat")
+id = "legacy_engineer"
+speaker = ExtResource("1_speaker")
+line = "Listen to his voice. He's already working out what went wrong. By morning it'll be fixed and by next year they'll have the systems in place to make sure it never happens again."
+next_id = "legacy_pilot"

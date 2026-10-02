@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://dk56rigqi6d7k"]
+
+[ext_resource type="Script" uid="uid://cfw5adli7npue" path="res://scripts/character.gd" id="1_char"]
+[ext_resource type="Texture2D" uid="uid://b8tgkptk2lmvc" path="res://assets/portraits/yuri_red.png" id="2_portrait"]
+
+[resource]
+script = ExtResource("1_char")
+display_name = "Yuri, Kedr"
+portrait = ExtResource("2_portrait")
+is_voice = true

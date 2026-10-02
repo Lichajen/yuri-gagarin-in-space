@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://dartjymfehboa"]
+
+[ext_resource type="Script" uid="uid://cfw5adli7npue" path="res://scripts/character.gd" id="1_char"]
+[ext_resource type="Texture2D" uid="uid://dyual7w15c7c4" path="res://assets/portraits/yuri.png" id="2_portrait"]
+
+[resource]
+script = ExtResource("1_char")
+display_name = "Yuri"
+portrait = ExtResource("2_portrait")
+is_player = true
+uses_radio = true

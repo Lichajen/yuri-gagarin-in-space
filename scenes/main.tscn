@@ -1,0 +1,216 @@
+[gd_scene format=3 uid="uid://b4ht3wa7q8d0n"]
+
+[ext_resource type="Script" uid="uid://qdu32dhq78cv" path="res://scenes/main.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://can2ljwy1qb51" path="res://scenes/history_log.gd" id="2_history"]
+[ext_resource type="Script" uid="uid://ds87ak7p7iv4p" path="res://scenes/choices_container.gd" id="3_choices"]
+[ext_resource type="Script" uid="uid://cfmpvfu6nlaqa" path="res://scripts/exchange.gd" id="4_exchange"]
+[ext_resource type="Script" uid="uid://b38wniwttlkix" path="res://scripts/beat.gd" id="5_beat"]
+[ext_resource type="Script" uid="uid://d0j2m25pb4gjb" path="res://scenes/portrait_box.gd" id="7_portrait"]
+[ext_resource type="Resource" path="res://data/characters/yuri.tres" id="8_yuri"]
+[ext_resource type="FontFile" uid="uid://bshfr7wg3nykw" path="res://assets/fonts/Snowstorm.otf" id="9_font"]
+[ext_resource type="Resource" path="res://data/korolev_attitude.tres" id="beat_0"]
+[ext_resource type="Resource" path="res://data/korolev_talk.tres" id="beat_1"]
+[ext_resource type="Resource" path="res://data/engineer_retro.tres" id="beat_2"]
+[ext_resource type="Resource" path="res://data/pilot_pulse.tres" id="beat_3"]
+[ext_resource type="Resource" path="res://data/korolev_silence.tres" id="beat_4"]
+[ext_resource type="Resource" path="res://data/korolev_air.tres" id="beat_5"]
+[ext_resource type="Resource" path="res://data/engineer_ten_days.tres" id="beat_6"]
+[ext_resource type="Resource" path="res://data/boy_ten_days.tres" id="beat_7"]
+[ext_resource type="Resource" path="res://data/kedr_home.tres" id="beat_8"]
+[ext_resource type="Resource" path="res://data/family_children.tres" id="beat_9"]
+[ext_resource type="Resource" path="res://data/family_name.tres" id="beat_10"]
+[ext_resource type="Resource" path="res://data/family_yuri.tres" id="beat_11"]
+[ext_resource type="Resource" path="res://data/family_korolev.tres" id="beat_12"]
+[ext_resource type="Resource" path="res://data/legacy_engineer.tres" id="beat_13"]
+[ext_resource type="Resource" path="res://data/legacy_pilot.tres" id="beat_14"]
+[ext_resource type="Resource" path="res://data/legacy_yuri.tres" id="beat_15"]
+[ext_resource type="Resource" path="res://data/legacy_korolev.tres" id="beat_16"]
+[ext_resource type="Resource" path="res://data/view_kedr.tres" id="beat_17"]
+[ext_resource type="Resource" path="res://data/view_boy.tres" id="beat_18"]
+[ext_resource type="Resource" path="res://data/view_yuri.tres" id="beat_19"]
+[ext_resource type="Resource" path="res://data/view_korolev.tres" id="beat_20"]
+[ext_resource type="Resource" path="res://data/korolev_fading.tres" id="beat_21"]
+[ext_resource type="Resource" path="res://data/engineer_distance.tres" id="beat_22"]
+[ext_resource type="Resource" path="res://data/pilot_blame.tres" id="beat_23"]
+[ext_resource type="Resource" path="res://data/kedr_falling.tres" id="beat_24"]
+[ext_resource type="Resource" path="res://data/korolev_final_silence.tres" id="beat_25"]
+[ext_resource type="Resource" path="res://data/korolev_final.tres" id="beat_26"]
+[ext_resource type="Resource" path="res://data/reply_to_zarya.tres" id="ex_0"]
+[ext_resource type="Resource" path="res://data/never_see.tres" id="ex_1"]
+[ext_resource type="Resource" path="res://data/final_reply.tres" id="ex_2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.02, 0.016, 0.012, 1)
+border_width_left = 3
+border_width_right = 3
+border_color = Color(0.96, 0.64, 0.1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cell_filled"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 3.0
+bg_color = Color(0.96, 0.64, 0.1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.96, 0.64, 0.1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cell_red"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 3.0
+bg_color = Color(0.757, 0.153, 0.176, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.757, 0.153, 0.176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cell_outline"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 3.0
+bg_color = Color(0.02, 0.016, 0.012, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.96, 0.64, 0.1, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_divider"]
+color = Color(0.96, 0.64, 0.1, 1)
+thickness = 3
+
+[node name="Main" type="Node" unique_id=1053325705]
+script = ExtResource("1_main")
+all_exchanges = Array[ExtResource("4_exchange")]([ExtResource("ex_0"), ExtResource("ex_1"), ExtResource("ex_2")])
+all_beats = Array[ExtResource("5_beat")]([ExtResource("beat_0"), ExtResource("beat_1"), ExtResource("beat_2"), ExtResource("beat_3"), ExtResource("beat_4"), ExtResource("beat_5"), ExtResource("beat_6"), ExtResource("beat_7"), ExtResource("beat_8"), ExtResource("beat_9"), ExtResource("beat_10"), ExtResource("beat_11"), ExtResource("beat_12"), ExtResource("beat_13"), ExtResource("beat_14"), ExtResource("beat_15"), ExtResource("beat_16"), ExtResource("beat_17"), ExtResource("beat_18"), ExtResource("beat_19"), ExtResource("beat_20"), ExtResource("beat_21"), ExtResource("beat_22"), ExtResource("beat_23"), ExtResource("beat_24"), ExtResource("beat_25"), ExtResource("beat_26")])
+player = ExtResource("8_yuri")
+
+[node name="Ui" type="Control" parent="." unique_id=2093034647]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Portrait" type="PanelContainer" parent="Ui" unique_id=682601219]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -664.0
+offset_top = 40.0
+offset_right = -504.0
+offset_bottom = 200.0
+grow_horizontal = 0
+script = ExtResource("7_portrait")
+
+[node name="PortraitRect" type="TextureRect" parent="Ui/Portrait" unique_id=1361331532]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="InitialLabel" type="Label" parent="Ui/Portrait" unique_id=841173862]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dialogue" type="PanelContainer" parent="Ui" unique_id=563977084]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -480.0
+offset_right = -60.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Margin" type="MarginContainer" parent="Ui/Dialogue" unique_id=1517051992]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Column" type="VBoxContainer" parent="Ui/Dialogue/Margin" unique_id=1800247171]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Header" type="HBoxContainer" parent="Ui/Dialogue/Margin/Column" unique_id=1792093476]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MissionCell" type="PanelContainer" parent="Ui/Dialogue/Margin/Column/Header" unique_id=1886200620]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_cell_filled")
+
+[node name="Mission" type="Label" parent="Ui/Dialogue/Margin/Column/Header/MissionCell" unique_id=363885002]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.02, 0.016, 0.012, 1)
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 18
+text = "VOSTOK 1"
+
+[node name="DateCell" type="PanelContainer" parent="Ui/Dialogue/Margin/Column/Header" unique_id=266124701]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cell_red")
+
+[node name="Date" type="Label" parent="Ui/Dialogue/Margin/Column/Header/DateCell" unique_id=1767459097]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.851, 0.627, 1)
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 18
+text = "12.04.61"
+
+[node name="CommsCell" type="PanelContainer" parent="Ui/Dialogue/Margin/Column/Header" unique_id=1065987542]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cell_outline")
+
+[node name="CommsLabel" type="Label" parent="Ui/Dialogue/Margin/Column/Header/CommsCell" unique_id=392246241]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_font")
+theme_override_font_sizes/font_size = 18
+text = "RADIO"
+
+[node name="HistoryScroll" type="ScrollContainer" parent="Ui/Dialogue/Margin/Column" unique_id=663557246]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="HistoryMargin" type="MarginContainer" parent="Ui/Dialogue/Margin/Column/HistoryScroll" unique_id=1880505527]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 6
+
+[node name="HistoryLog" type="VBoxContainer" parent="Ui/Dialogue/Margin/Column/HistoryScroll/HistoryMargin" unique_id=450569323]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 28
+script = ExtResource("2_history")
+
+[node name="Divider" type="HSeparator" parent="Ui/Dialogue/Margin/Column" unique_id=2017132344]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_divider")
+
+[node name="Choices" type="VBoxContainer" parent="Ui/Dialogue/Margin/Column" unique_id=246453409]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 280)
+layout_mode = 2
+theme_override_constants/separation = 2
+script = ExtResource("3_choices")
