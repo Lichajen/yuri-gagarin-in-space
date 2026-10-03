@@ -10,6 +10,7 @@ signal game_lost
 @onready var sky_texture := $BackgroundLayer/GameBackground/Sky
 @onready var hud_layer := $HudLayer
 @onready var progress_bar := $HudLayer/Hud/ProgressBar
+@onready var poster_generator := $BackgroundLayer/GameBackground/PosterGenerator
 
 var progress : float = 0.0:
 	set(new):
@@ -21,7 +22,12 @@ var progress : float = 0.0:
 		drift_effect = drift_max_effect * progress + drift_min_effect * (1 - progress)
 		sky_texture.modulate = Color(1,1,1) * (1 - progress)
 		progress_bar.value = progress
+		if progress >= progress_until_poster:
+			poster_generator.next_poster()
+			progress_until_poster += progress_inc_per_poster
 		print(progress)
+var progress_until_poster : float = 0.30
+const progress_inc_per_poster : float = 0.08
 const speed : float = 0.01
 const push_min_strength : float = 10.0
 const push_max_strength : float = 250.0

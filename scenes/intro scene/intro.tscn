@@ -8,13 +8,23 @@
 [ext_resource type="PackedScene" uid="uid://diogmn803hm8g" path="res://scenes/intro scene/IntroLabel.tscn" id="3_fuurs"]
 [ext_resource type="Texture2D" uid="uid://b6wg3lfkbnwe0" path="res://scenes/intro scene/Yuri_Gagarine.png" id="4_8deek"]
 [ext_resource type="Texture2D" uid="uid://bvtbx0pgxiu6b" path="res://scenes/intro scene/Nikita_Khruchchev_Open_Mouth.png" id="4_f467a"]
+[ext_resource type="Script" uid="uid://c8bpmxbusycmp" path="res://scenes/intro scene/poster_generator.gd" id="4_wc6ll"]
+[ext_resource type="Texture2D" uid="uid://cgb0deo15rxxw" path="res://scenes/intro scene/posters/prewar/international_womens_day_1930.jpg" id="5_iys2d"]
 [ext_resource type="Texture2D" uid="uid://bd2ecr2aonwin" path="res://scenes/intro scene/vostok_body.png" id="6_mlwcf"]
+[ext_resource type="Texture2D" uid="uid://duvbogbvw83h1" path="res://scenes/intro scene/posters/prewar/lenin_&_industrialization_1930.jpg" id="6_tyvgu"]
+[ext_resource type="Texture2D" uid="uid://pg5spdqued8l" path="res://scenes/intro scene/posters/prewar/prewar_military_recruitment_poster.jpg" id="7_e2dup"]
 [ext_resource type="Texture2D" uid="uid://cy5ng7dyygagn" path="res://scenes/intro scene/vostok_cone.png" id="7_mhk22"]
 [ext_resource type="Texture2D" uid="uid://dgqig6ca1fmn2" path="res://scenes/intro scene/Nikita_Khruchchev_Closed_Mouth.png" id="8_aephr"]
+[ext_resource type="Texture2D" uid="uid://cjjd07h0mxa7q" path="res://scenes/intro scene/posters/ww2/be_a_hero.jpg" id="8_qu8sn"]
 [ext_resource type="Texture2D" uid="uid://d1yuud78612kc" path="res://scenes/intro scene/google_translate.PNG" id="9_7lih0"]
+[ext_resource type="Texture2D" uid="uid://di8bxh0xjn52m" path="res://scenes/intro scene/posters/ww2/everything_to_the_front.jpg" id="9_a2qgw"]
 [ext_resource type="Shader" uid="uid://de12qkna018pv" path="res://scenes/intro scene/nikita_shader.gdshader" id="10_4myt1"]
 [ext_resource type="AudioStream" uid="uid://d0epy3kt3wcti" path="res://scenes/intro scene/nikita_speach.ogg" id="10_f467a"]
+[ext_resource type="Texture2D" uid="uid://rbjctmie3c2b" path="res://scenes/intro scene/posters/ww2/greetings_to_the_red_army_1945.jpg" id="10_wt0k0"]
+[ext_resource type="Texture2D" uid="uid://dc1v5jime3cv3" path="res://scenes/intro scene/posters/postwar/in_the_name_of_peace.webp" id="11_6tajn"]
 [ext_resource type="Texture2D" uid="uid://cca8inew7qu7l" path="res://scenes/intro scene/white_star.png" id="11_ajdr3"]
+[ext_resource type="Texture2D" uid="uid://cwxwhyagtn3fs" path="res://scenes/intro scene/posters/postwar/the_fairy_tale_becaome_truth.webp" id="12_b17rd"]
+[ext_resource type="Texture2D" uid="uid://clyf5kw5sneyl" path="res://scenes/intro scene/posters/postwar/the_road_is_open_for_humans.webp" id="13_0btr2"]
 
 [sub_resource type="Gradient" id="Gradient_ajdr3"]
 offsets = PackedFloat32Array(0)
@@ -1062,6 +1072,12 @@ texture = ExtResource("2_ajdr3")
 visibility_rect = Rect2(-500, -500, 1000, 1000)
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_gjrtx")
+
+[node name="PosterGenerator" type="Node2D" parent="BackgroundLayer/GameBackground" unique_id=2059823122]
+script = ExtResource("4_wc6ll")
+prewar_posters = Array[Texture2D]([ExtResource("5_iys2d"), ExtResource("6_tyvgu"), ExtResource("7_e2dup")])
+ww2_posters = Array[Texture2D]([ExtResource("8_qu8sn"), ExtResource("9_a2qgw"), ExtResource("10_wt0k0")])
+postwar_posters = Array[Texture2D]([ExtResource("11_6tajn"), ExtResource("12_b17rd"), ExtResource("13_0btr2")])
 
 [node name="ExpositionLayer" type="Control" parent="BackgroundLayer" unique_id=839575672]
 layout_mode = 3
