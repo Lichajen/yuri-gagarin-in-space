@@ -1,0 +1,1314 @@
+[gd_scene format=3 uid="uid://bwcuv6v526bwj"]
+
+[ext_resource type="Texture2D" uid="uid://btd6jbpcejxm8" path="res://scenes/intro scene/yellow_star.png" id="1_kyvru"]
+[ext_resource type="Script" uid="uid://pwq6sc3soma3" path="res://scenes/intro scene/intro.gd" id="1_o31ho"]
+[ext_resource type="Texture2D" uid="uid://dw8ktw8qkx8cc" path="res://scenes/intro scene/circle_particle.tres" id="2_ajdr3"]
+[ext_resource type="FontFile" uid="uid://bshfr7wg3nykw" path="res://assets/fonts/Snowstorm.otf" id="2_yq4di"]
+[ext_resource type="PackedScene" uid="uid://diogmn803hm8g" path="res://scenes/intro scene/IntroLabel.tscn" id="3_fuurs"]
+[ext_resource type="Texture2D" uid="uid://b6wg3lfkbnwe0" path="res://scenes/intro scene/Yuri_Gagarine.png" id="4_8deek"]
+[ext_resource type="Texture2D" uid="uid://bvtbx0pgxiu6b" path="res://scenes/intro scene/Nikita_Khruchchev_Open_Mouth.png" id="4_f467a"]
+[ext_resource type="Texture2D" uid="uid://bd2ecr2aonwin" path="res://scenes/intro scene/vostok_body.png" id="6_mlwcf"]
+[ext_resource type="Texture2D" uid="uid://cy5ng7dyygagn" path="res://scenes/intro scene/vostok_cone.png" id="7_mhk22"]
+[ext_resource type="Texture2D" uid="uid://dgqig6ca1fmn2" path="res://scenes/intro scene/Nikita_Khruchchev_Closed_Mouth.png" id="8_aephr"]
+[ext_resource type="Texture2D" uid="uid://d1yuud78612kc" path="res://scenes/intro scene/google_translate.PNG" id="9_7lih0"]
+[ext_resource type="Shader" uid="uid://de12qkna018pv" path="res://scenes/intro scene/nikita_shader.gdshader" id="10_4myt1"]
+[ext_resource type="AudioStream" uid="uid://d0epy3kt3wcti" path="res://scenes/intro scene/nikita_speach.ogg" id="10_f467a"]
+[ext_resource type="Texture2D" uid="uid://cca8inew7qu7l" path="res://scenes/intro scene/white_star.png" id="11_ajdr3"]
+
+[sub_resource type="Gradient" id="Gradient_mlwcf"]
+colors = PackedColorArray(0.99999994, 0.44181255, 0.14380336, 1, 0.97072893, 0.6289049, 0.37758175, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mhk22"]
+gradient = SubResource("Gradient_mlwcf")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_dqoef"]
+colors = PackedColorArray(0.46618086, 0.4661808, 0.4661808, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3p8pl"]
+gradient = SubResource("Gradient_dqoef")
+
+[sub_resource type="Curve" id="Curve_ftuif"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, -1.7341615, 0, 0, Vector2(1, 2), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6kxhe"]
+curve = SubResource("Curve_ftuif")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gjrtx"]
+particle_flag_disable_z = true
+spread = 10.0
+flatness = 1.0
+initial_velocity_min = 632.35
+initial_velocity_max = 830.88
+gravity = Vector3(0, -10, 0)
+scale_curve = SubResource("CurveTexture_6kxhe")
+color_ramp = SubResource("GradientTexture1D_3p8pl")
+
+[sub_resource type="Animation" id="Animation_kyvru"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.14835298]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LightBeams:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.14835298]
+}
+
+[sub_resource type="Animation" id="Animation_yq4di"]
+resource_name = "rotate_star"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0.14835298, -0.14835298]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LightBeams:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [-0.14835298641951802, 0.14835298641951802]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fuurs"]
+_data = {
+&"RESET": SubResource("Animation_kyvru"),
+&"rotate_star": SubResource("Animation_yq4di")
+}
+
+[sub_resource type="Animation" id="Animation_mlwcf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SettingText/DateIntroLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SettingText/TimeIntroLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SettingText/PlaceIntroLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GameScene/GagarinScaleBounceNode/Gagarin:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 838)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GameScene/GagarinIntroLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("GameScene/MissionIntroLabel:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GameScene/MissionIntroLabel2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GameScene/VostokPivot:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("GameScene/VostokPivot/VostokBody/ConePivotPoint:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("GameScene/GagarinScaleBounceNode/Gagarin:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.25, 0.25)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("GameScene/GagarinScaleBounceNode/Gagarin:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("GameScene/GagarinScaleBounceNode:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 638)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("GameScene/VostokPivot:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(191, 443)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../../BackgroundLayer/ExpositionLayer:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Nikita/Control:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.48235294)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Nikita/GoogleTranslate:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = false
+tracks/17/path = NodePath("Nikita/GoogleTranslate/NikitaSpeach:playing")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Nikita/Control/NikitaTexture:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Nikita/Control/NikitaTexture:texture")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_aephr")]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Nikita/Control/GPUParticles2D:emitting")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Nikita/Control/NikitaTexture:material:shader_parameter/alpha_mult")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Nikita/Control/GPUParticles2D:position")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(192, 481)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("GameScene/VostokPivot/RocketParticles:emitting")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("GameScene/VostokPivot/RocketParticles:lifetime")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.02]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("../../BackgroundLayer/GameBackground/Ground/DustParticles:emitting")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("../../BackgroundLayer/GameBackground/Ground/DustParticles2:emitting")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("../../BackgroundLayer/GameBackground/Ground:position")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 609)]
+}
+
+[sub_resource type="Animation" id="Animation_7lih0"]
+resource_name = "entre_gagarin"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameScene/GagarinScaleBounceNode/Gagarin:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 220), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameScene/GagarinIntroLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_7xki7"]
+resource_name = "enter_vostok"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameScene/VostokPivot:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameScene/VostokPivot/VostokBody/ConePivotPoint:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.25, 0.93333334, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -2.958333, -2.958333, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GameScene/GagarinScaleBounceNode/Gagarin:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.33333334, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.25, 0.25), Vector2(0.25, 0.25), Vector2(0.02, 0.02)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GameScene/GagarinScaleBounceNode/Gagarin:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.95472914, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GameScene/GagarinScaleBounceNode:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.16666667, 0.33247757, 0.59784955, 0.8235683),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(640, 638), Vector2(687, 230), Vector2(345, 93), Vector2(190, 338)]
+}
+
+[sub_resource type="Animation" id="Animation_dqoef"]
+resource_name = "exit_nikita"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nikita/Control/GPUParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nikita/Control/NikitaTexture:material:shader_parameter/alpha_mult")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.73333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nikita/Control/GPUParticles2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(192, 481), Vector2(192, 60)]
+}
+
+[sub_resource type="Animation" id="Animation_mhk22"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ch5s4"]
+resource_name = "liftoff"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameScene/VostokPivot/RocketParticles:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameScene/VostokPivot/RocketParticles:lifetime")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.02, 0.2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../BackgroundLayer/GameBackground/Ground/DustParticles:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../BackgroundLayer/GameBackground/Ground/DustParticles2:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../BackgroundLayer/GameBackground/Ground:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 609), Vector2(0, 1324)]
+}
+
+[sub_resource type="Animation" id="Animation_f467a"]
+resource_name = "mission"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameScene/MissionIntroLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameScene/MissionIntroLabel2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GameScene/GagarinIntroLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_4myt1"]
+resource_name = "prepare_for_launch"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameScene/VostokPivot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(191, 443), Vector2(640, 443)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../BackgroundLayer/ExpositionLayer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_aephr"]
+resource_name = "setting"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SettingText/DateIntroLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SettingText/TimeIntroLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.499, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SettingText/PlaceIntroLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.999, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ajdr3"]
+resource_name = "speach"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nikita/Control:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.48235294)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nikita/GoogleTranslate:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.23791972, 0.36666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nikita/GoogleTranslate/NikitaSpeach:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.36666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Nikita/Control/NikitaTexture:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Nikita/Control/NikitaTexture:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3629801, 0.364, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_aephr"), ExtResource("4_f467a"), ExtResource("8_aephr")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aephr"]
+_data = {
+&"RESET": SubResource("Animation_mlwcf"),
+&"enter_gagarin": SubResource("Animation_7lih0"),
+&"enter_vostok": SubResource("Animation_7xki7"),
+&"exit_nikita": SubResource("Animation_dqoef"),
+&"fade_in": SubResource("Animation_mhk22"),
+&"liftoff": SubResource("Animation_ch5s4"),
+&"mission": SubResource("Animation_f467a"),
+&"prepare_for_launch": SubResource("Animation_4myt1"),
+&"setting": SubResource("Animation_aephr"),
+&"speach": SubResource("Animation_ajdr3")
+}
+
+[sub_resource type="Animation" id="Animation_o31ho"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GagarinScaleBounceNode/Gagarin:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GagarinScaleBounceNode:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wtby6"]
+resource_name = "gagarin_anim"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GagarinScaleBounceNode/Gagarin:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.99, 1.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GagarinScaleBounceNode:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.5), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mlwcf"]
+_data = {
+&"RESET": SubResource("Animation_o31ho"),
+&"gagarin_anim": SubResource("Animation_wtby6")
+}
+
+[sub_resource type="Curve" id="Curve_b04ci"]
+_data = [Vector2(0, 1), 0.0, -2.9578643, 0, 0, Vector2(1, 0), -0.16782214, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_dl77j"]
+curve = SubResource("Curve_b04ci")
+
+[sub_resource type="Gradient" id="Gradient_8th0l"]
+offsets = PackedFloat32Array(0.009615385, 0.34134614, 1)
+colors = PackedColorArray(0.92079186, 0.61407, 0.14303097, 1, 0.26293245, 0.26293245, 0.26293242, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wc6ll"]
+gradient = SubResource("Gradient_8th0l")
+
+[sub_resource type="Curve" id="Curve_iys2d"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 0.60674167), 0.0, -2.554092, 0, 0, Vector2(1, 2), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_tyvgu"]
+curve = SubResource("Curve_iys2d")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e2dup"]
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+spread = 10.0
+flatness = 1.0
+initial_velocity_min = 632.35
+initial_velocity_max = 830.88
+gravity = Vector3(0, -10, 0)
+scale_curve = SubResource("CurveTexture_tyvgu")
+color_ramp = SubResource("GradientTexture1D_wc6ll")
+alpha_curve = SubResource("CurveTexture_dl77j")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3p8pl"]
+resource_local_to_scene = true
+shader = ExtResource("10_4myt1")
+shader_parameter/alpha_line = 1.0
+shader_parameter/alpha_mult = 1.0
+
+[sub_resource type="Curve" id="Curve_21q5r"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.0048165, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ftuif"]
+curve = SubResource("Curve_21q5r")
+
+[sub_resource type="Gradient" id="Gradient_6kxhe"]
+colors = PackedColorArray(0.972549, 0.05490196, 0.10980392, 1, 0.9490196, 0.8980392, 0.06666667, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gjrtx"]
+gradient = SubResource("Gradient_6kxhe")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ch5s4"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(200, 1, 1)
+direction = Vector3(-1, 1, 0)
+spread = 0.0
+initial_velocity_min = 169.12
+initial_velocity_max = 187.5
+gravity = Vector3(600, -600, 0)
+color_initial_ramp = SubResource("GradientTexture1D_gjrtx")
+alpha_curve = SubResource("CurveTexture_ftuif")
+
+[node name="Intro" type="Node" unique_id=1619881867]
+script = ExtResource("1_o31ho")
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=1499865399]
+
+[node name="GameBackground" type="Control" parent="BackgroundLayer" unique_id=1327138550]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sky" type="TextureRect" parent="BackgroundLayer/GameBackground" unique_id=50985733]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_mhk22")
+
+[node name="Ground" type="ColorRect" parent="BackgroundLayer/GameBackground" unique_id=2090442603]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -111.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.7294118, 0.11372549, 0.08235294, 1)
+
+[node name="DustParticles" type="GPUParticles2D" parent="BackgroundLayer/GameBackground/Ground" unique_id=1601468445]
+position = Vector2(640, 0)
+rotation = -0.11652774
+emitting = false
+amount = 200
+texture = ExtResource("2_ajdr3")
+visibility_rect = Rect2(-500, -500, 1000, 1000)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_gjrtx")
+
+[node name="DustParticles2" type="GPUParticles2D" parent="BackgroundLayer/GameBackground/Ground" unique_id=716195757]
+position = Vector2(640, 0)
+rotation = 3.2585297
+emitting = false
+amount = 200
+texture = ExtResource("2_ajdr3")
+visibility_rect = Rect2(-500, -500, 1000, 1000)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_gjrtx")
+
+[node name="ExpositionLayer" type="Control" parent="BackgroundLayer" unique_id=839575672]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundLayer/ExpositionLayer" unique_id=1783449587]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.972549, 0.05490196, 0.10980392, 1)
+
+[node name="YellowStar" type="Node2D" parent="BackgroundLayer/ExpositionLayer" unique_id=495393819]
+position = Vector2(640, 110)
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundLayer/ExpositionLayer/YellowStar" unique_id=905424715]
+rotation = 0.14835298
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_kyvru")
+
+[node name="LightBeams" type="Node2D" parent="BackgroundLayer/ExpositionLayer/YellowStar" unique_id=959136899]
+modulate = Color(0.9490196, 0.8980392, 0.06666667, 1)
+rotation = -0.14835298
+
+[node name="Polygon2D" type="Polygon2D" parent="BackgroundLayer/ExpositionLayer/YellowStar/LightBeams" unique_id=1150925590]
+polygon = PackedVector2Array(-63, 66, -1174, 1021, -1105, 1071, -50, 74)
+
+[node name="Polygon2D2" type="Polygon2D" parent="BackgroundLayer/ExpositionLayer/YellowStar/LightBeams" unique_id=111338839]
+polygon = PackedVector2Array(-9, 87, 4, 87, 78, 1121, -52, 1126)
+
+[node name="Polygon2D3" type="Polygon2D" parent="BackgroundLayer/ExpositionLayer/YellowStar/LightBeams" unique_id=396896388]
+polygon = PackedVector2Array(55, 69, 499, 757, 622, 712, 64, 61)
+
+[node name="Polygon2D4" type="Polygon2D" parent="BackgroundLayer/ExpositionLayer/YellowStar/LightBeams" unique_id=333213089]
+polygon = PackedVector2Array(80, 14, 80, -3, 944, -48, 947, 53)
+
+[node name="Polygon2D5" type="Polygon2D" parent="BackgroundLayer/ExpositionLayer/YellowStar/LightBeams" unique_id=1305627354]
+polygon = PackedVector2Array(57, -58, 45, -66, 486, -798, 565, -749)
+
+[node name="Polygon2D6" type="Polygon2D" parent="BackgroundLayer/ExpositionLayer/YellowStar/LightBeams" unique_id=544421957]
+polygon = PackedVector2Array(7, -81, -8, -82, -114, -1143, 95, -1148)
+
+[node name="Polygon2D7" type="Polygon2D" parent="BackgroundLayer/ExpositionLayer/YellowStar/LightBeams" unique_id=987538581]
+polygon = PackedVector2Array(-42, -57, -48, -50, -830, -653, -714, -749)
+
+[node name="Polygon2D8" type="Polygon2D" parent="BackgroundLayer/ExpositionLayer/YellowStar/LightBeams" unique_id=702593904]
+polygon = PackedVector2Array(-80, 3, -80, 12, -1105, 81, -1119, -30)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundLayer/ExpositionLayer/YellowStar" unique_id=1287237598]
+libraries/ = SubResource("AnimationLibrary_fuurs")
+autoplay = &"rotate_star"
+speed_scale = 2.167
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1119568665]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1444549451]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control" unique_id=926900280]
+libraries/ = SubResource("AnimationLibrary_aephr")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control" unique_id=33070104]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/ColorRect" unique_id=1118661889]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_yq4di")
+theme_override_font_sizes/font_size = 48
+text = "YURI IN SPACE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingText" type="Control" parent="CanvasLayer/Control" unique_id=1913003068]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DateIntroLabel" parent="CanvasLayer/Control/SettingText" unique_id=453548064 instance=ExtResource("3_fuurs")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -22.0
+offset_right = 137.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "12.04.1961"
+
+[node name="TimeIntroLabel" parent="CanvasLayer/Control/SettingText" unique_id=2114061238 instance=ExtResource("3_fuurs")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = 29.0
+offset_right = 137.0
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "6:07 UTC"
+
+[node name="PlaceIntroLabel" parent="CanvasLayer/Control/SettingText" unique_id=1376023232 instance=ExtResource("3_fuurs")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = 81.0
+offset_right = 137.0
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "BAIKONUR
+KAZAKH SSR"
+
+[node name="GameScene" type="Control" parent="CanvasLayer/Control" unique_id=513647624]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GagarinIntroLabel" parent="CanvasLayer/Control/GameScene" unique_id=725419872 instance=ExtResource("3_fuurs")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -26.0
+offset_right = 20.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "YURI GAGARIN
+FIRST COSMONAUT"
+
+[node name="MissionIntroLabel" parent="CanvasLayer/Control/GameScene" unique_id=878499126 instance=ExtResource("3_fuurs")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -26.0
+offset_right = 20.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "HE'S ON A DARING MISSION
+TO BECOME THE FIRST PERSON
+IN SPACE"
+
+[node name="MissionIntroLabel2" parent="CanvasLayer/Control/GameScene" unique_id=466753918 instance=ExtResource("3_fuurs")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -26.0
+offset_right = 20.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "USING THE EXPERIMENTAL
+SPACECRAFT VOSTOK-1"
+
+[node name="GagarinScaleBounceNode" type="Node2D" parent="CanvasLayer/Control/GameScene" unique_id=770334565]
+position = Vector2(640, 638)
+
+[node name="Gagarin" type="Sprite2D" parent="CanvasLayer/Control/GameScene/GagarinScaleBounceNode" unique_id=471484844]
+position = Vector2(640, 838)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_8deek")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/GameScene" unique_id=1006307731]
+libraries/ = SubResource("AnimationLibrary_mlwcf")
+autoplay = &"gagarin_anim"
+speed_scale = 4.334
+
+[node name="VostokPivot" type="Node2D" parent="CanvasLayer/Control/GameScene" unique_id=1121313693]
+visible = false
+position = Vector2(191, 443)
+
+[node name="VostokBody" type="Sprite2D" parent="CanvasLayer/Control/GameScene/VostokPivot" unique_id=204949975]
+texture = ExtResource("6_mlwcf")
+
+[node name="ConePivotPoint" type="Node2D" parent="CanvasLayer/Control/GameScene/VostokPivot/VostokBody" unique_id=1815410380]
+position = Vector2(-16, -100)
+
+[node name="VostokCone" type="Sprite2D" parent="CanvasLayer/Control/GameScene/VostokPivot/VostokBody/ConePivotPoint" unique_id=470832665]
+position = Vector2(16, 100)
+texture = ExtResource("7_mhk22")
+
+[node name="RocketParticles" type="GPUParticles2D" parent="CanvasLayer/Control/GameScene/VostokPivot" unique_id=103669405]
+show_behind_parent = true
+position = Vector2(0, 152)
+emitting = false
+amount = 200
+texture = ExtResource("2_ajdr3")
+lifetime = 0.02
+process_material = SubResource("ParticleProcessMaterial_e2dup")
+
+[node name="Nikita" type="Control" parent="CanvasLayer/Control" unique_id=1939666234]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Control/Nikita" unique_id=1321936819]
+modulate = Color(1, 1, 1, 0.48235294)
+anchors_preset = 0
+offset_left = 871.0
+offset_top = -3.0
+offset_right = 1255.0
+offset_bottom = 475.0
+
+[node name="NikitaTexture" type="TextureRect" parent="CanvasLayer/Control/Nikita/Control" unique_id=49669683]
+visible = false
+material = SubResource("ShaderMaterial_3p8pl")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_aephr")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="CanvasLayer/Control/Nikita/Control" unique_id=1642783646]
+position = Vector2(192, 481)
+emitting = false
+amount = 640
+texture = ExtResource("11_ajdr3")
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_ch5s4")
+
+[node name="GoogleTranslate" type="TextureRect" parent="CanvasLayer/Control/Nikita" unique_id=503450745]
+visible = false
+layout_mode = 0
+offset_left = 494.0
+offset_top = 19.0
+offset_right = 1666.0
+offset_bottom = 548.0
+scale = Vector2(0.335, 0.335)
+texture = ExtResource("9_7lih0")
+
+[node name="NikitaSpeach" type="AudioStreamPlayer" parent="CanvasLayer/Control/Nikita/GoogleTranslate" unique_id=1332127370]
+stream = ExtResource("10_f467a")
