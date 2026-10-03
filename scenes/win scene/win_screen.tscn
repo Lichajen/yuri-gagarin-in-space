@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bidfqfy68moh5"]
+
+[ext_resource type="Script" uid="uid://c7i24ev1wyiok" path="res://scenes/win scene/win_screen.gd" id="1_tf8ft"]
+[ext_resource type="FontFile" uid="uid://bshfr7wg3nykw" path="res://assets/fonts/Snowstorm.otf" id="2_ofr3r"]
+
+[node name="WinScreen" type="Node" unique_id=925928641]
+script = ExtResource("1_tf8ft")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1751129823]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=511500014]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control" unique_id=1150434843]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=1555541733]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_ofr3r")
+theme_override_font_sizes/font_size = 48
+text = "POYEKHALI"
+horizontal_alignment = 1
+vertical_alignment = 1

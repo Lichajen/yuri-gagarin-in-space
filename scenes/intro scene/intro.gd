@@ -78,7 +78,7 @@ func animate_intro():
 	await self.anim_part_finished
 	_play_anim_part("exit_nikita", whole_note_length, 0)
 	await self.anim_part_finished
-	_play_anim_part("liftoff", 3 * whole_note_length, 0)
+	_play_anim_part("liftoff", 2.75 * whole_note_length, 0)
 	await self.anim_part_finished
 	is_playing_game = true
 	hud_layer.show()
