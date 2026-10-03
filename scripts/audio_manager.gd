@@ -10,6 +10,7 @@ const RADIO_START := preload("res://assets/audio/sfx_radio_start.ogg")
 const RADIO_LOOP := preload("res://assets/audio/sfx_radio_loop.ogg")
 const RADIO_END := preload("res://assets/audio/sfx_radio_end.ogg")
 const MUSIC := preload("res://assets/audio/music_landscape.mp3")
+const INTRO_MUSIC := preload("res://scenes/intro scene/moskau_PLACEHOLDER.ogg")
 
 const RADIO_START_DB := 0.0
 const RADIO_LOOP_DB := -10.0
@@ -20,11 +21,14 @@ var _pool: Array[AudioStreamPlayer] = []
 var _next_player := 0
 var _radio_start_player: AudioStreamPlayer
 var _radio_loop_player: AudioStreamPlayer
+var music_player: AudioStreamPlayer
+var intro_music_player: AudioStreamPlayer
 
 func _ready() -> void:
 	var music_stream: AudioStreamMP3 = MUSIC.duplicate()
 	music_stream.loop = true
-	_make_player(music_stream, MUSIC_DB).play()
+	music_player = _make_player(music_stream, MUSIC_DB)
+	intro_music_player = _make_player(INTRO_MUSIC.duplicate(), MUSIC_DB)
 
 	for i in POOL_SIZE:
 		_pool.append(_make_player(null, 0.0))
@@ -61,3 +65,15 @@ func radio_end() -> void:
 	_radio_loop_player.stop()
 	play(RADIO_END, RADIO_END_DB)
 	radio_changed.emit(false)
+
+func play_music():
+	intro_music_player.stop()
+	music_player.play()
+
+func play_intro():
+	music_player.stop()
+	intro_music_player.play()
+
+func stop_all_music():
+	music_player.stop()
+	intro_music_player.stop()

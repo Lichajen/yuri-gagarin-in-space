@@ -45,7 +45,14 @@ func _input(event):
 		has_played_intro = true
 		animate_intro()
 
+func _ready():
+	pass
+
 func animate_intro():
+	Audio.play_intro()
+	$CanvasLayer/Control/GameScene/AnimationPlayer.play("gagarin_anim")
+	$CanvasLayer/Control/GameScene/AnimationPlayer.seek(1.0)
+	$BackgroundLayer/ExpositionLayer/YellowStar/AnimationPlayer.play("rotate_star")
 	_play_anim_part("fade_in", 2 * whole_note_length, whole_note_length)
 	await self.anim_part_finished
 	_play_anim_part("setting", 0.5 * whole_note_length, whole_note_length)

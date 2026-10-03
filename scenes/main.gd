@@ -21,6 +21,8 @@ var beat_lookup: Dictionary = {}
 var _comms_generation := 0
 
 func _ready() -> void:
+	Audio.play_music()
+	
 	for exchange in all_exchanges:
 		exchange_lookup[exchange.id] = exchange
 	for beat in all_beats:

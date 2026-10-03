@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://desn102a188yd"
+path="res://.godot/imported/moskau_PLACEHOLDER.ogg-ca16acd3ba9ecc0c82daecf747514e5c.oggvorbisstr"
+
+[deps]
+
+source_file="res://scenes/intro scene/moskau_PLACEHOLDER.ogg"
+dest_files=["res://.godot/imported/moskau_PLACEHOLDER.ogg-ca16acd3ba9ecc0c82daecf747514e5c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
