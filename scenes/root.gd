@@ -2,6 +2,32 @@ extends Node
 
 @onready var intro_scene : PackedScene = preload("res://scenes/intro scene/intro.tscn")
 @onready var lose_scene : PackedScene = preload("res://scenes/main.tscn")
+@onready var fade_to_black_anim := $TransitionLayer/Control/FadeToBlackAnim
+
+var game : Node:
+	set(new):
+		if game: game.queue_free()
+		game = new
+		add_child(game)
 
 func _ready():
-	get_tree().paused = true
+	start_intro()
+
+func start_intro():
+	game = intro_scene.instantiate()
+	game.connect("game_lost", _on_intro_lost)
+
+func start_lose_game():
+	game = lose_scene.instantiate()
+	game.connect("game_over", _on_game_over)
+
+func _on_intro_lost():
+	fade_to_black_anim.play("fade_to_black")
+	await fade_to_black_anim.animation_finished
+	Audio.play_music()
+	start_lose_game()
+	fade_to_black_anim.play_backwards("fade_to_black")
+
+func _on_game_over():
+	await get_tree().create_timer(5.0).timeout
+	start_intro()

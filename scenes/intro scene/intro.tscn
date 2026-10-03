@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://btd6jbpcejxm8" path="res://scenes/intro scene/yellow_star.png" id="1_kyvru"]
 [ext_resource type="Script" uid="uid://pwq6sc3soma3" path="res://scenes/intro scene/intro.gd" id="1_o31ho"]
 [ext_resource type="Texture2D" uid="uid://dw8ktw8qkx8cc" path="res://scenes/intro scene/circle_particle.tres" id="2_ajdr3"]
+[ext_resource type="Texture2D" uid="uid://dsx58f356k8mq" path="res://scenes/intro scene/Mini_Yuri_Gagarine.png" id="2_dqoef"]
 [ext_resource type="FontFile" uid="uid://bshfr7wg3nykw" path="res://assets/fonts/Snowstorm.otf" id="2_yq4di"]
 [ext_resource type="PackedScene" uid="uid://diogmn803hm8g" path="res://scenes/intro scene/IntroLabel.tscn" id="3_fuurs"]
 [ext_resource type="Texture2D" uid="uid://b6wg3lfkbnwe0" path="res://scenes/intro scene/Yuri_Gagarine.png" id="4_8deek"]
@@ -14,6 +15,25 @@
 [ext_resource type="Shader" uid="uid://de12qkna018pv" path="res://scenes/intro scene/nikita_shader.gdshader" id="10_4myt1"]
 [ext_resource type="AudioStream" uid="uid://d0epy3kt3wcti" path="res://scenes/intro scene/nikita_speach.ogg" id="10_f467a"]
 [ext_resource type="Texture2D" uid="uid://cca8inew7qu7l" path="res://scenes/intro scene/white_star.png" id="11_ajdr3"]
+
+[sub_resource type="Gradient" id="Gradient_ajdr3"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dqoef"]
+gradient = SubResource("Gradient_ajdr3")
+width = 32
+height = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3p8pl"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 0, 0, 1)
+corner_detail = 6
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ftuif"]
 
 [sub_resource type="Gradient" id="Gradient_mlwcf"]
 colors = PackedColorArray(0.99999994, 0.44181255, 0.14380336, 1, 0.97072893, 0.6289049, 0.37758175, 1)
@@ -965,6 +985,34 @@ alpha_curve = SubResource("CurveTexture_ftuif")
 [node name="Intro" type="Node" unique_id=1619881867]
 script = ExtResource("1_o31ho")
 
+[node name="HudLayer" type="CanvasLayer" parent="." unique_id=1015458829]
+layer = 3
+visible = false
+
+[node name="Hud" type="Control" parent="HudLayer" unique_id=1913635130]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="VSlider" parent="HudLayer/Hud" unique_id=1848724681]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 51.0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_icons/grabber = ExtResource("2_dqoef")
+theme_override_icons/grabber_highlight = SubResource("GradientTexture2D_dqoef")
+theme_override_icons/grabber_disabled = SubResource("GradientTexture2D_dqoef")
+theme_override_styles/slider = SubResource("StyleBoxFlat_3p8pl")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_3p8pl")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_ftuif")
+max_value = 1.0
+step = 0.001
+
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=1499865399]
 
 [node name="GameBackground" type="Control" parent="BackgroundLayer" unique_id=1327138550]
@@ -1073,6 +1121,7 @@ libraries/ = SubResource("AnimationLibrary_fuurs")
 speed_scale = 2.167
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1119568665]
+layer = 2
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=1444549451]
 layout_mode = 3
@@ -1259,6 +1308,7 @@ emitting = false
 amount = 200
 texture = ExtResource("2_ajdr3")
 lifetime = 0.02
+visibility_rect = Rect2(-500, -500, 1000, 1000)
 process_material = SubResource("ParticleProcessMaterial_e2dup")
 
 [node name="Nikita" type="Control" parent="CanvasLayer/Control" unique_id=1939666234]

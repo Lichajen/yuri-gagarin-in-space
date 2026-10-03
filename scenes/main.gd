@@ -1,5 +1,7 @@
 extends Node
 
+signal game_over
+
 const START_ID := "korolev_attitude"
 const END_ID := "END"
 const FADE_OUT_TIME := 3.0
@@ -61,6 +63,9 @@ func _end() -> void:
 	choices.clear()
 	var tween := create_tween()
 	tween.tween_property(ui, "modulate:a", 0.0, FADE_OUT_TIME).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	await tween.finished
+	game_over.emit()
+	
 
 # Keeps the cell lit briefly after the static ends; a new transmission
 # in that window cancels the switch-off.

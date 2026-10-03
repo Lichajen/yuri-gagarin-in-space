@@ -8,14 +8,19 @@ signal game_lost
 @onready var anim := $CanvasLayer/Control/AnimationPlayer
 @onready var rocket := $CanvasLayer/Control/GameScene/VostokPivot
 @onready var sky_texture := $BackgroundLayer/GameBackground/Sky
+@onready var hud_layer := $HudLayer
+@onready var progress_bar := $HudLayer/Hud/ProgressBar
 
 var progress : float = 0.0:
 	set(new):
-		if new >= 1.0: game_won.emit()
+		if new >= 1.0: 
+			game_won.emit()
+			is_playing_game = false
 		progress = clamp(new, 0, 1.0)
 		push_strength = push_max_strength * progress + push_min_strength * (1 - progress)
 		drift_effect = drift_max_effect * progress + drift_min_effect * (1 - progress)
 		sky_texture.modulate = Color(1,1,1) * (1 - progress)
+		progress_bar.value = progress
 		print(progress)
 const speed : float = 0.01
 const push_min_strength : float = 10.0
@@ -32,7 +37,9 @@ var drift_effect : float = drift_min_effect
 var rocket_position : float = 0.0:
 	set(new):
 		rocket_position = new
-		if abs(new) > 300: game_lost.emit()
+		if abs(new) > 300: 
+			game_lost.emit()
+			is_playing_game = false
 		rocket.global_position.x = (1280/2) + (1280/2) * rocket_position / 300
 		rocket.rotation = (rocket_position / 300) * (PI / 2)
 
@@ -74,6 +81,7 @@ func animate_intro():
 	_play_anim_part("liftoff", 3 * whole_note_length, 0)
 	await self.anim_part_finished
 	is_playing_game = true
+	hud_layer.show()
 
 func _play_anim_part(part:String, time:float, hold_time:float, backwards : bool = false):
 	anim.speed_scale = 1/time
