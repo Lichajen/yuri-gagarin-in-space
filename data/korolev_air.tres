@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Beat" format=3]
+[gd_resource type="Resource" script_class="Beat" format=3 uid="uid://cvwxsl50jpq2c"]
 
-[ext_resource type="Script" path="res://scripts/beat.gd" id="1_beat"]
-[ext_resource type="Resource" path="res://data/characters/korolev.tres" id="1_speaker"]
+[ext_resource type="AudioStream" uid="uid://bawu2vviisphr" path="res://assets/audio/Voice Lines/Korolev/korolev_air.ogg" id="1_43ay2"]
+[ext_resource type="Script" uid="uid://b38wniwttlkix" path="res://scripts/beat.gd" id="1_beat"]
+[ext_resource type="Resource" uid="uid://cwtntvr1y53ok" path="res://data/characters/korolev.tres" id="1_speaker"]
 
 [resource]
 script = ExtResource("1_beat")
 id = "korolev_air"
 speaker = ExtResource("1_speaker")
 line = "Understood. You have ten days of air, Yura. We made sure of that."
+audio = ExtResource("1_43ay2")
 next_id = "engineer_ten_days"

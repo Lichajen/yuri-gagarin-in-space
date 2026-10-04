@@ -17,6 +17,7 @@ const COMMS_HOLD_TIME := 0.5
 @onready var comms_label: Label = %CommsLabel
 @onready var history_log: VBoxContainer = %HistoryLog
 @onready var choices: VBoxContainer = %Choices
+@onready var speach_player: AudioStreamPlayer = %SpeachPlayer ###
 
 var exchange_lookup: Dictionary = {}
 var beat_lookup: Dictionary = {}
@@ -36,6 +37,7 @@ func _ready() -> void:
 	history_log.player = player
 	history_log.speaker_changed.connect(portrait.show_character)
 	choices.option_chosen.connect(goto_node)
+	choices.option_audio.connect(new_speach)
 	choices.option_selected.connect(history_log.add_choice)
 
 	goto_node(START_ID)
@@ -47,6 +49,7 @@ func goto_node(id: String) -> void:
 
 	if beat_lookup.has(id):
 		var beat: Beat = beat_lookup[id]
+		if beat != null: new_speach(beat.audio) ###
 		await history_log.add_entry(beat.narration, beat.speaker, beat.line)
 		choices.show_beat(beat)
 		return
@@ -90,3 +93,8 @@ func _set_comms_active(active: bool) -> void:
 		style.border_color = UITheme.AMBER_DIM
 		comms_label.add_theme_color_override("font_color", UITheme.AMBER_DIM)
 	comms_cell.add_theme_stylebox_override("panel", style)
+
+func new_speach(audio: AudioStreamOggVorbis): ###
+	speach_player.stop()
+	speach_player.stream = audio
+	speach_player.play()

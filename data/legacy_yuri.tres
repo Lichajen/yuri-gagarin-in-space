@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Beat" format=3]
+[gd_resource type="Resource" script_class="Beat" format=3 uid="uid://l5sqag82vvqi"]
 
-[ext_resource type="Script" path="res://scripts/beat.gd" id="1_beat"]
-[ext_resource type="Resource" path="res://data/characters/yuri.tres" id="1_speaker"]
+[ext_resource type="Script" uid="uid://b38wniwttlkix" path="res://scripts/beat.gd" id="1_beat"]
+[ext_resource type="AudioStream" uid="uid://d27g5tbbyem88" path="res://assets/audio/Voice Lines/Yuri Radio/legacy_yuri_radio.ogg" id="1_btlx2"]
+[ext_resource type="Resource" uid="uid://dartjymfehboa" path="res://data/characters/yuri.tres" id="1_speaker"]
 
 [resource]
 script = ExtResource("1_beat")
 id = "legacy_yuri"
 speaker = ExtResource("1_speaker")
 line = "\"Sergei Pavlovich, record everything. Every number you get. Don't waste any of it.\""
+audio = ExtResource("1_btlx2")
 next_id = "legacy_korolev"

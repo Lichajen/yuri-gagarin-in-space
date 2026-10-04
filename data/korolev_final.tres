@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Beat" format=3]
+[gd_resource type="Resource" script_class="Beat" format=3 uid="uid://dpvhiwpnay1xs"]
 
-[ext_resource type="Script" path="res://scripts/beat.gd" id="1_beat"]
-[ext_resource type="Resource" path="res://data/characters/korolev.tres" id="1_speaker"]
+[ext_resource type="AudioStream" uid="uid://dg062xweanm56" path="res://assets/audio/Voice Lines/Korolev/korolev_final.ogg" id="1_6h5si"]
+[ext_resource type="Script" uid="uid://b38wniwttlkix" path="res://scripts/beat.gd" id="1_beat"]
+[ext_resource type="Resource" uid="uid://cwtntvr1y53ok" path="res://data/characters/korolev.tres" id="1_speaker"]
 
 [resource]
 script = ExtResource("1_beat")
 id = "korolev_final"
 speaker = ExtResource("1_speaker")
 line = "...Kedr... we see you... go on, Yura..."
+audio = ExtResource("1_6h5si")
 next_id = "END"

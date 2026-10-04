@@ -1,6 +1,7 @@
 extends VBoxContainer
 
 signal option_chosen(next_id: String)
+signal option_audio(audio:AudioStreamOggVorbis)
 signal option_selected(text: String)
 
 const HOVER_SOUND_COOLDOWN := 0.2
@@ -93,7 +94,10 @@ func _on_option_pressed(option: DialogueOption) -> void:
 	Audio.play(Audio.OPTION_SELECT, -10.0)
 	await _wait_for_buttons_gone()
 	option_selected.emit(option.text)
+	option_audio.emit(option.audio)
+	await get_tree().create_timer(option.audio.get_length()).timeout
 	option_chosen.emit(option.next_id)
+	
 
 func _on_continue_pressed(next_id: String) -> void:
 	if not _accepting_input:

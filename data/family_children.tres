@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Beat" format=3]
+[gd_resource type="Resource" script_class="Beat" format=3 uid="uid://fytmvhbrrp6y"]
 
-[ext_resource type="Script" path="res://scripts/beat.gd" id="1_beat"]
-[ext_resource type="Resource" path="res://data/characters/klushino_boy.tres" id="1_speaker"]
+[ext_resource type="Script" uid="uid://b38wniwttlkix" path="res://scripts/beat.gd" id="1_beat"]
+[ext_resource type="Resource" uid="uid://dpwetycdhkupi" path="res://data/characters/klushino_boy.tres" id="1_speaker"]
+[ext_resource type="AudioStream" uid="uid://lsow2tnjujxw" path="res://assets/audio/Voice Lines/Yuri Boy/family_children.ogg" id="1_u52p0"]
 
 [resource]
 script = ExtResource("1_beat")
 id = "family_children"
 speaker = ExtResource("1_speaker")
 line = "Lenochka is two. Galochka is five weeks old. They won't remember your face."
+audio = ExtResource("1_u52p0")
 next_id = "family_name"

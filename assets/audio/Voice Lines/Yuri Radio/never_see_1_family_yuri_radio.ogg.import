@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dr4xxr6mdxry2"
+path="res://.godot/imported/never_see_1_family_yuri_radio.ogg-e280f6ca92f334c16600d236d6e7d535.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Voice Lines/Yuri Radio/never_see_1_family_yuri_radio.ogg"
+dest_files=["res://.godot/imported/never_see_1_family_yuri_radio.ogg-e280f6ca92f334c16600d236d6e7d535.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d27g5tbbyem88"
+path="res://.godot/imported/legacy_yuri_radio.ogg-77467199076bfac43741be8de2fd36fb.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Voice Lines/Yuri Radio/legacy_yuri_radio.ogg"
+dest_files=["res://.godot/imported/legacy_yuri_radio.ogg-77467199076bfac43741be8de2fd36fb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

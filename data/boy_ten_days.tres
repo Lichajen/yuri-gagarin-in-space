@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Beat" format=3]
+[gd_resource type="Resource" script_class="Beat" format=3 uid="uid://dms65dafcwy30"]
 
-[ext_resource type="Script" path="res://scripts/beat.gd" id="1_beat"]
-[ext_resource type="Resource" path="res://data/characters/klushino_boy.tres" id="1_speaker"]
+[ext_resource type="Script" uid="uid://b38wniwttlkix" path="res://scripts/beat.gd" id="1_beat"]
+[ext_resource type="Resource" uid="uid://dpwetycdhkupi" path="res://data/characters/klushino_boy.tres" id="1_speaker"]
+[ext_resource type="AudioStream" uid="uid://df1pn5fu5kxj6" path="res://assets/audio/Voice Lines/Yuri Boy/boy_ten_days.ogg" id="1_xx0qt"]
 
 [resource]
 script = ExtResource("1_beat")
 id = "boy_ten_days"
 speaker = ExtResource("1_speaker")
 line = "Ten days! Remember how long one summer felt when you were seven?"
+audio = ExtResource("1_xx0qt")
 next_id = "kedr_home"

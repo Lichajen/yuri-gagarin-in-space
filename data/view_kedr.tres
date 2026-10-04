@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Beat" format=3]
+[gd_resource type="Resource" script_class="Beat" format=3 uid="uid://bd14os7l1oj7b"]
 
-[ext_resource type="Script" path="res://scripts/beat.gd" id="1_beat"]
-[ext_resource type="Resource" path="res://data/characters/kedr.tres" id="1_speaker"]
+[ext_resource type="Script" uid="uid://b38wniwttlkix" path="res://scripts/beat.gd" id="1_beat"]
+[ext_resource type="AudioStream" uid="uid://c1rhxv30d2awn" path="res://assets/audio/Voice Lines/Yuri Kedr/view_kedr.ogg" id="1_cj3bb"]
+[ext_resource type="Resource" uid="uid://dk56rigqi6d7k" path="res://data/characters/kedr.tres" id="1_speaker"]
 
 [resource]
 script = ExtResource("1_beat")
 id = "view_kedr"
 speaker = ExtResource("1_speaker")
 line = "You're the first to see all of it at once. Round. Blue. The borders don't exist."
+audio = ExtResource("1_cj3bb")
 next_id = "view_boy"

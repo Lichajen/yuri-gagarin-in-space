@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://o8topm2n6nwx"
+path="res://.godot/imported/pilot_family_name.ogg-080f57e3a20d8e8b16e4d605626e43fa.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Voice Lines/Yuri Pilot/pilot_family_name.ogg"
+dest_files=["res://.godot/imported/pilot_family_name.ogg-080f57e3a20d8e8b16e4d605626e43fa.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

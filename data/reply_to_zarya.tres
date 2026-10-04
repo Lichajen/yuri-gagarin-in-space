@@ -1,21 +1,27 @@
 [gd_resource type="Resource" script_class="Exchange" format=3 uid="uid://b6v5qaf5fikw"]
 
 [ext_resource type="Script" uid="uid://bmold5q5uayal" path="res://scripts/dialogue_option.gd" id="1_option"]
+[ext_resource type="AudioStream" uid="uid://cpa3fdj15s32e" path="res://assets/audio/Voice Lines/Yuri Radio/reply_to_Zarya-1_1_going_somewhere_new_yuri_radio.ogg" id="2_4f46q"]
 [ext_resource type="Script" uid="uid://cfmpvfu6nlaqa" path="res://scripts/exchange.gd" id="2_exchange"]
+[ext_resource type="AudioStream" uid="uid://daq32vmm1ae4w" path="res://assets/audio/Voice Lines/Yuri Radio/reply_to_Zarya-1_2_silence_yuri_radio.ogg" id="3_4geu0"]
+[ext_resource type="AudioStream" uid="uid://d0jqg5pk8ddhh" path="res://assets/audio/Voice Lines/Yuri Radio/reply_to_Zarya-1_3_engine_yuri_radio.ogg" id="4_2jm01"]
 
 [sub_resource type="Resource" id="Option_1"]
 script = ExtResource("1_option")
 text = "\"Zarya-1, Kedr. Confirmed. I'm... going somewhere new.\""
+audio = ExtResource("2_4f46q")
 next_id = "korolev_silence"
 
 [sub_resource type="Resource" id="Option_2"]
 script = ExtResource("1_option")
 text = "[Say nothing. Watch Earth get smaller in the window]"
+audio = ExtResource("3_4geu0")
 next_id = "korolev_silence"
 
 [sub_resource type="Resource" id="Option_3"]
 script = ExtResource("1_option")
 text = "\"Sergei Pavlovich, your engine was stronger than you thought.\""
+audio = ExtResource("4_2jm01")
 next_id = "korolev_silence"
 
 [resource]

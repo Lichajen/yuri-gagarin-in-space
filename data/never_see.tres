@@ -2,20 +2,26 @@
 
 [ext_resource type="Script" uid="uid://bmold5q5uayal" path="res://scripts/dialogue_option.gd" id="1_option"]
 [ext_resource type="Script" uid="uid://cfmpvfu6nlaqa" path="res://scripts/exchange.gd" id="2_exchange"]
+[ext_resource type="AudioStream" uid="uid://dr4xxr6mdxry2" path="res://assets/audio/Voice Lines/Yuri Radio/never_see_1_family_yuri_radio.ogg" id="2_j8o85"]
+[ext_resource type="AudioStream" uid="uid://rxll73hvgdj2" path="res://assets/audio/Voice Lines/Yuri Radio/never_see_2_next_great_steps_yuri_radio.ogg" id="3_gk0t5"]
+[ext_resource type="AudioStream" uid="uid://dyfw0wsyiyyp" path="res://assets/audio/Voice Lines/Yuri Radio/never_see_3_the_view_yuri_pilot.ogg" id="4_m51ux"]
 
 [sub_resource type="Resource" id="Option_1"]
 script = ExtResource("1_option")
 text = "\"Valya... the girls...\""
+audio = ExtResource("2_j8o85")
 next_id = "family_children"
 
 [sub_resource type="Resource" id="Option_2"]
 script = ExtResource("1_option")
 text = "\"The ones who come after me. The ones who will make the next great steps.\""
+audio = ExtResource("3_gk0t5")
 next_id = "legacy_engineer"
 
 [sub_resource type="Resource" id="Option_3"]
 script = ExtResource("1_option")
 text = "\"The view.\""
+audio = ExtResource("4_m51ux")
 next_id = "view_kedr"
 
 [resource]

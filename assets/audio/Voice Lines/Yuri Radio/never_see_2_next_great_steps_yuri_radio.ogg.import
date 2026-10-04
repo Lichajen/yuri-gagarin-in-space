@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://rxll73hvgdj2"
+path="res://.godot/imported/never_see_2_next_great_steps_yuri_radio.ogg-8b732b040204ab242221099116d7f88f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Voice Lines/Yuri Radio/never_see_2_next_great_steps_yuri_radio.ogg"
+dest_files=["res://.godot/imported/never_see_2_next_great_steps_yuri_radio.ogg-8b732b040204ab242221099116d7f88f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

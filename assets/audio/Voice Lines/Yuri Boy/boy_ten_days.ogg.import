@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://df1pn5fu5kxj6"
+path="res://.godot/imported/boy_ten_days.ogg-07f262b475c76524d1b2889fe6470e5a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Voice Lines/Yuri Boy/boy_ten_days.ogg"
+dest_files=["res://.godot/imported/boy_ten_days.ogg-07f262b475c76524d1b2889fe6470e5a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

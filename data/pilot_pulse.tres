@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Beat" format=3]
+[gd_resource type="Resource" script_class="Beat" format=3 uid="uid://c72mx1ijipg04"]
 
-[ext_resource type="Script" path="res://scripts/beat.gd" id="1_beat"]
-[ext_resource type="Resource" path="res://data/characters/pilot.tres" id="1_speaker"]
+[ext_resource type="AudioStream" uid="uid://b6gsupdm2f0gl" path="res://assets/audio/Voice Lines/Yuri Pilot/pilot_pulse.ogg" id="1_6cqk6"]
+[ext_resource type="Script" uid="uid://b38wniwttlkix" path="res://scripts/beat.gd" id="1_beat"]
+[ext_resource type="Resource" uid="uid://dlry321xxhlbq" path="res://data/characters/pilot.tres" id="1_speaker"]
 
 [resource]
 script = ExtResource("1_beat")
 id = "pilot_pulse"
 speaker = ExtResource("1_speaker")
 line = "Pulse 64. Steady. I guess we're gonna have to accept this now."
+audio = ExtResource("1_6cqk6")
 next_id = "reply_to_zarya"

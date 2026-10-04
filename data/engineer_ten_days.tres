@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Beat" format=3]
+[gd_resource type="Resource" script_class="Beat" format=3 uid="uid://d1rfjwv7sdtog"]
 
-[ext_resource type="Script" path="res://scripts/beat.gd" id="1_beat"]
-[ext_resource type="Resource" path="res://data/characters/engineer.tres" id="1_speaker"]
+[ext_resource type="Script" uid="uid://b38wniwttlkix" path="res://scripts/beat.gd" id="1_beat"]
+[ext_resource type="AudioStream" uid="uid://bw3kah08xta2a" path="res://assets/audio/Voice Lines/Yuri Engineer/engineer_ten_days.ogg" id="1_s5bxd"]
+[ext_resource type="Resource" uid="uid://bpioxdrjl2n8d" path="res://data/characters/engineer.tres" id="1_speaker"]
 
 [resource]
 script = ExtResource("1_beat")
 id = "engineer_ten_days"
 speaker = ExtResource("1_speaker")
 line = "Ten days packed in case the retro failed and you had to wait for the atmosphere to catch you instead. Not meant for leaving it."
+audio = ExtResource("1_s5bxd")
 next_id = "boy_ten_days"

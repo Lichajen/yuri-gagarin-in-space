@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Beat" format=3]
+[gd_resource type="Resource" script_class="Beat" format=3 uid="uid://2w7yutcbvtgp"]
 
-[ext_resource type="Script" path="res://scripts/beat.gd" id="1_beat"]
-[ext_resource type="Resource" path="res://data/characters/engineer.tres" id="1_speaker"]
+[ext_resource type="AudioStream" uid="uid://dtks1fuswoo5u" path="res://assets/audio/Voice Lines/Yuri Engineer/engineer_distance.ogg" id="1_2s0v5"]
+[ext_resource type="Script" uid="uid://b38wniwttlkix" path="res://scripts/beat.gd" id="1_beat"]
+[ext_resource type="Resource" uid="uid://bpioxdrjl2n8d" path="res://data/characters/engineer.tres" id="1_speaker"]
 
 [resource]
 script = ExtResource("1_beat")
 id = "engineer_distance"
 speaker = ExtResource("1_speaker")
 line = "You're getting farther away from everyone you know. Every second you move away from home, you move closer to the stars. Measurement."
+audio = ExtResource("1_2s0v5")
 next_id = "pilot_blame"

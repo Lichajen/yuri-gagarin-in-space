@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://drxlrdw7jmasq"
+path="res://.godot/imported/korolev_talk.ogg-50f37db77b19abb9045e80e71cf0b5f8.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Voice Lines/Korolev/korolev_talk.ogg"
+dest_files=["res://.godot/imported/korolev_talk.ogg-50f37db77b19abb9045e80e71cf0b5f8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

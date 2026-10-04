@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dgoio385q3yqv"
+path="res://.godot/imported/final_reply_3_not_your_fault_yuri_radio.ogg-4fb4f7e2e9e98050473f3146c3b77892.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Voice Lines/Yuri Radio/final_reply_3_not_your_fault_yuri_radio.ogg"
+dest_files=["res://.godot/imported/final_reply_3_not_your_fault_yuri_radio.ogg-4fb4f7e2e9e98050473f3146c3b77892.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

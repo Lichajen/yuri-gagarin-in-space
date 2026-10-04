@@ -2,20 +2,26 @@
 
 [ext_resource type="Script" uid="uid://bmold5q5uayal" path="res://scripts/dialogue_option.gd" id="1_option"]
 [ext_resource type="Script" uid="uid://cfmpvfu6nlaqa" path="res://scripts/exchange.gd" id="2_exchange"]
+[ext_resource type="AudioStream" uid="uid://camjltmc5onad" path="res://assets/audio/Voice Lines/Yuri Radio/final_reply_1_poyekhali_yuri_radio.ogg" id="2_kgyv2"]
+[ext_resource type="AudioStream" uid="uid://m7aomu70sqgt" path="res://assets/audio/Voice Lines/Yuri Radio/final_reply_2_feeling_fine_yuri_radio.ogg" id="3_hlx2m"]
+[ext_resource type="AudioStream" uid="uid://dgoio385q3yqv" path="res://assets/audio/Voice Lines/Yuri Radio/final_reply_3_not_your_fault_yuri_radio.ogg" id="4_7dckm"]
 
 [sub_resource type="Resource" id="Option_1"]
 script = ExtResource("1_option")
 text = "\"Poyekhali.\" (Let's go)"
+audio = ExtResource("2_kgyv2")
 next_id = "korolev_final_silence"
 
 [sub_resource type="Resource" id="Option_2"]
 script = ExtResource("1_option")
 text = "\"Zarya-1, Kedr. Feeling fine. Continuing the flight.\""
+audio = ExtResource("3_hlx2m")
 next_id = "korolev_final_silence"
 
 [sub_resource type="Resource" id="Option_3"]
 script = ExtResource("1_option")
 text = "\"It's not your fault, Sergei Pavlovich. Just keep going.\""
+audio = ExtResource("4_7dckm")
 next_id = "korolev_final_silence"
 
 [resource]

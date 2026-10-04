@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c08p2rgv8acjm"
+path="res://.godot/imported/pilot_blame.ogg-f50e541062a06baecaa7df1dff865a96.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Voice Lines/Yuri Pilot/pilot_blame.ogg"
+dest_files=["res://.godot/imported/pilot_blame.ogg-f50e541062a06baecaa7df1dff865a96.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

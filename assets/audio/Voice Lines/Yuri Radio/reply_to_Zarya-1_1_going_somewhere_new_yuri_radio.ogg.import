@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cpa3fdj15s32e"
+path="res://.godot/imported/reply_to_Zarya-1_1_going_somewhere_new_yuri_radio.ogg-aac2f5ba4da5f04aa8cfbd05706b6022.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Voice Lines/Yuri Radio/reply_to_Zarya-1_1_going_somewhere_new_yuri_radio.ogg"
+dest_files=["res://.godot/imported/reply_to_Zarya-1_1_going_somewhere_new_yuri_radio.ogg-aac2f5ba4da5f04aa8cfbd05706b6022.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

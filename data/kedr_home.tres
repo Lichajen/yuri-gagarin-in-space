@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Beat" format=3]
+[gd_resource type="Resource" script_class="Beat" format=3 uid="uid://ckqm3ik4k3g21"]
 
-[ext_resource type="Script" path="res://scripts/beat.gd" id="1_beat"]
-[ext_resource type="Resource" path="res://data/characters/kedr.tres" id="1_speaker"]
+[ext_resource type="Script" uid="uid://b38wniwttlkix" path="res://scripts/beat.gd" id="1_beat"]
+[ext_resource type="AudioStream" uid="uid://d4lnnu1bali8b" path="res://assets/audio/Voice Lines/Yuri Kedr/kedr_home.ogg" id="1_kdq2a"]
+[ext_resource type="Resource" uid="uid://dk56rigqi6d7k" path="res://data/characters/kedr.tres" id="1_speaker"]
 
 [resource]
 script = ExtResource("1_beat")
 id = "kedr_home"
 speaker = ExtResource("1_speaker")
 line = "Won't be seeing home anymore I guess. Will never get to see..."
+audio = ExtResource("1_kdq2a")
 next_id = "never_see"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c1rhxv30d2awn"
+path="res://.godot/imported/view_kedr.ogg-fd938d0d8a7e69020ee187f1e532a28a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Voice Lines/Yuri Kedr/view_kedr.ogg"
+dest_files=["res://.godot/imported/view_kedr.ogg-fd938d0d8a7e69020ee187f1e532a28a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

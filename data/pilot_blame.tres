@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Beat" format=3]
+[gd_resource type="Resource" script_class="Beat" format=3 uid="uid://cmsgy7ek0jpug"]
 
-[ext_resource type="Script" path="res://scripts/beat.gd" id="1_beat"]
-[ext_resource type="Resource" path="res://data/characters/pilot.tres" id="1_speaker"]
+[ext_resource type="Script" uid="uid://b38wniwttlkix" path="res://scripts/beat.gd" id="1_beat"]
+[ext_resource type="AudioStream" uid="uid://c08p2rgv8acjm" path="res://assets/audio/Voice Lines/Yuri Pilot/pilot_blame.ogg" id="1_lgx62"]
+[ext_resource type="Resource" uid="uid://dlry321xxhlbq" path="res://data/characters/pilot.tres" id="1_speaker"]
 
 [resource]
 script = ExtResource("1_beat")
 id = "pilot_blame"
 speaker = ExtResource("1_speaker")
 line = "He's blaming himself right now. That's not how we do things."
+audio = ExtResource("1_lgx62")
 next_id = "kedr_falling"

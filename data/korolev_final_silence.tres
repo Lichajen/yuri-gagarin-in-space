@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Beat" format=3]
+[gd_resource type="Resource" script_class="Beat" format=3 uid="uid://b3xp7ecasmvw4"]
 
-[ext_resource type="Script" path="res://scripts/beat.gd" id="1_beat"]
-[ext_resource type="Resource" path="res://data/characters/korolev.tres" id="1_speaker"]
+[ext_resource type="Script" uid="uid://b38wniwttlkix" path="res://scripts/beat.gd" id="1_beat"]
+[ext_resource type="Resource" uid="uid://cwtntvr1y53ok" path="res://data/characters/korolev.tres" id="1_speaker"]
+[ext_resource type="AudioStream" uid="uid://djsvjg1ktydxa" path="res://assets/audio/Voice Lines/Korolev/korolev_final_silence.ogg" id="1_vek8d"]
 
 [resource]
 script = ExtResource("1_beat")
 id = "korolev_final_silence"
 speaker = ExtResource("1_speaker")
 line = "..."
+audio = ExtResource("1_vek8d")
 next_id = "korolev_final"

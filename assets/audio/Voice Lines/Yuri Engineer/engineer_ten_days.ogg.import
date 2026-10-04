@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bw3kah08xta2a"
+path="res://.godot/imported/engineer_ten_days.ogg-465df52e040e6a6b15d04b8ef24d9cd0.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Voice Lines/Yuri Engineer/engineer_ten_days.ogg"
+dest_files=["res://.godot/imported/engineer_ten_days.ogg-465df52e040e6a6b15d04b8ef24d9cd0.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

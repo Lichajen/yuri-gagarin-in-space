@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Beat" format=3]
+[gd_resource type="Resource" script_class="Beat" format=3 uid="uid://b1y0id4y5blg5"]
 
-[ext_resource type="Script" path="res://scripts/beat.gd" id="1_beat"]
-[ext_resource type="Resource" path="res://data/characters/pilot.tres" id="1_speaker"]
+[ext_resource type="Script" uid="uid://b38wniwttlkix" path="res://scripts/beat.gd" id="1_beat"]
+[ext_resource type="AudioStream" uid="uid://cgdj5y3fmio1a" path="res://assets/audio/Voice Lines/Yuri Pilot/legacy_pilot.ogg" id="1_r61a4"]
+[ext_resource type="Resource" uid="uid://dlry321xxhlbq" path="res://data/characters/pilot.tres" id="1_speaker"]
 
 [resource]
 script = ExtResource("1_beat")
 id = "legacy_pilot"
 speaker = ExtResource("1_speaker")
 line = "Whoever flies next will make it home."
+audio = ExtResource("1_r61a4")
 next_id = "legacy_yuri"

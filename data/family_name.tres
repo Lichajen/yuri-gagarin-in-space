@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Beat" format=3]
+[gd_resource type="Resource" script_class="Beat" format=3 uid="uid://bjuxktmwpvt2b"]
 
-[ext_resource type="Script" path="res://scripts/beat.gd" id="1_beat"]
-[ext_resource type="Resource" path="res://data/characters/pilot.tres" id="1_speaker"]
+[ext_resource type="AudioStream" uid="uid://o8topm2n6nwx" path="res://assets/audio/Voice Lines/Yuri Pilot/pilot_family_name.ogg" id="1_8fnyy"]
+[ext_resource type="Script" uid="uid://b38wniwttlkix" path="res://scripts/beat.gd" id="1_beat"]
+[ext_resource type="Resource" uid="uid://dlry321xxhlbq" path="res://data/characters/pilot.tres" id="1_speaker"]
 
 [resource]
 script = ExtResource("1_beat")
 id = "family_name"
 speaker = ExtResource("1_speaker")
 line = "She'll remember your name though. They'll all make sure of it. Your name will be remembered. Forever. By all."
+audio = ExtResource("1_8fnyy")
 next_id = "family_yuri"

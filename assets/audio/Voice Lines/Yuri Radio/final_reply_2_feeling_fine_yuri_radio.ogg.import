@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://m7aomu70sqgt"
+path="res://.godot/imported/final_reply_2_feeling_fine_yuri_radio.ogg-76216243f7c47d16dc8cb5a7a1fedd84.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Voice Lines/Yuri Radio/final_reply_2_feeling_fine_yuri_radio.ogg"
+dest_files=["res://.godot/imported/final_reply_2_feeling_fine_yuri_radio.ogg-76216243f7c47d16dc8cb5a7a1fedd84.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

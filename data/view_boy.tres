@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://b38wniwttlkix" path="res://scripts/beat.gd" id="1_beat"]
 [ext_resource type="Resource" uid="uid://dpwetycdhkupi" path="res://data/characters/klushino_boy.tres" id="1_speaker"]
+[ext_resource type="AudioStream" uid="uid://yl2epogup031" path="res://assets/audio/Voice Lines/Yuri Boy/view_boy.ogg" id="1_wxkyc"]
 
 [resource]
 script = ExtResource("1_beat")
 id = "view_boy"
 speaker = ExtResource("1_speaker")
 line = "During the war your family lived in a dugout. You'd watch the sky through a gap in the boards. Now you're looking back through a window the same size."
+audio = ExtResource("1_wxkyc")
 next_id = "view_yuri"

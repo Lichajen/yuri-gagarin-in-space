@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Beat" format=3]
+[gd_resource type="Resource" script_class="Beat" format=3 uid="uid://viw3dqpggp0y"]
 
-[ext_resource type="Script" path="res://scripts/beat.gd" id="1_beat"]
-[ext_resource type="Resource" path="res://data/characters/kedr.tres" id="1_speaker"]
+[ext_resource type="Script" uid="uid://b38wniwttlkix" path="res://scripts/beat.gd" id="1_beat"]
+[ext_resource type="AudioStream" uid="uid://bgbqo3sxtdxfb" path="res://assets/audio/Voice Lines/Yuri Kedr/kedr_falling.ogg" id="1_hh3bg"]
+[ext_resource type="Resource" uid="uid://dk56rigqi6d7k" path="res://data/characters/kedr.tres" id="1_speaker"]
 
 [resource]
 script = ExtResource("1_beat")
 id = "kedr_falling"
 speaker = ExtResource("1_speaker")
 line = "Falling away from them. You're the farthest out anyone's ever reached."
+audio = ExtResource("1_hh3bg")
 next_id = "final_reply"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c006216vsa7dd"
+path="res://.godot/imported/legacy_engineer.ogg-1aa5d704f5868d05a082bc76dff24d46.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Voice Lines/Yuri Engineer/legacy_engineer.ogg"
+dest_files=["res://.godot/imported/legacy_engineer.ogg-1aa5d704f5868d05a082bc76dff24d46.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

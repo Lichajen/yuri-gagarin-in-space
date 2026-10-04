@@ -5,4 +5,5 @@ class_name Beat
 @export_multiline var narration: String = ""
 @export var speaker: Character
 @export_multiline var line: String = ""
+@export var audio: AudioStreamOggVorbis
 @export var next_id: String = ""

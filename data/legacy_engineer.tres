@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Beat" format=3]
+[gd_resource type="Resource" script_class="Beat" format=3 uid="uid://bmb2uikqk755n"]
 
-[ext_resource type="Script" path="res://scripts/beat.gd" id="1_beat"]
-[ext_resource type="Resource" path="res://data/characters/engineer.tres" id="1_speaker"]
+[ext_resource type="AudioStream" uid="uid://c006216vsa7dd" path="res://assets/audio/Voice Lines/Yuri Engineer/legacy_engineer.ogg" id="1_adgey"]
+[ext_resource type="Script" uid="uid://b38wniwttlkix" path="res://scripts/beat.gd" id="1_beat"]
+[ext_resource type="Resource" uid="uid://bpioxdrjl2n8d" path="res://data/characters/engineer.tres" id="1_speaker"]
 
 [resource]
 script = ExtResource("1_beat")
 id = "legacy_engineer"
 speaker = ExtResource("1_speaker")
 line = "Listen to his voice. He's already working out what went wrong. By morning it'll be fixed and by next year they'll have the systems in place to make sure it never happens again."
+audio = ExtResource("1_adgey")
 next_id = "legacy_pilot"
