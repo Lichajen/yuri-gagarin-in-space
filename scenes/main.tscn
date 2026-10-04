@@ -8,6 +8,11 @@
 [ext_resource type="Script" uid="uid://d0j2m25pb4gjb" path="res://scenes/portrait_box.gd" id="7_portrait"]
 [ext_resource type="Resource" uid="uid://dartjymfehboa" path="res://data/characters/yuri.tres" id="8_yuri"]
 [ext_resource type="FontFile" uid="uid://bshfr7wg3nykw" path="res://assets/fonts/Snowstorm.otf" id="9_font"]
+[ext_resource type="Texture2D" uid="uid://dsbxw6nxks5vj" path="res://assets/misc/earth_transparent_background.webp" id="35_5poiv"]
+[ext_resource type="Texture2D" uid="uid://c2pr8bqj5losl" path="res://assets/misc/vostok_inside.png" id="35_c6pm6"]
+[ext_resource type="Script" uid="uid://cyetu3v5jouw1" path="res://scenes/earth.gd" id="36_2cjbq"]
+[ext_resource type="Shader" uid="uid://3bct3s7wg5g3" path="res://scenes/gray_scale_shader.gdshader" id="38_chjal"]
+[ext_resource type="Texture2D" uid="uid://v0fefpcvgrwy" path="res://icon.svg" id="39_cjqg0"]
 [ext_resource type="Resource" uid="uid://b60k6ptjeywk7" path="res://data/korolev_attitude.tres" id="beat_0"]
 [ext_resource type="Resource" uid="uid://c3eyxdxpriahk" path="res://data/korolev_talk.tres" id="beat_1"]
 [ext_resource type="Resource" uid="uid://6v87puf45f7i" path="res://data/engineer_retro.tres" id="beat_2"]
@@ -38,6 +43,23 @@
 [ext_resource type="Resource" uid="uid://b6v5qaf5fikw" path="res://data/reply_to_zarya.tres" id="ex_0"]
 [ext_resource type="Resource" uid="uid://u8chfde6es3d" path="res://data/never_see.tres" id="ex_1"]
 [ext_resource type="Resource" uid="uid://jjt5kmhxdhbx" path="res://data/final_reply.tres" id="ex_2"]
+
+[sub_resource type="Gradient" id="Gradient_chjal"]
+offsets = PackedFloat32Array(0.16793893, 0.94274807)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cjqg0"]
+gradient = SubResource("Gradient_chjal")
+width = 1280
+height = 720
+fill = 1
+fill_from = Vector2(0.3220859, 0.5289707)
+fill_to = Vector2(0.5245399, 0.79072946)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vchkt"]
+shader = ExtResource("38_chjal")
+shader_parameter/brightness = 1.0
+shader_parameter/yellow_tint = 0.91
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
 bg_color = Color(0.02, 0.016, 0.012, 1)
@@ -93,6 +115,77 @@ player = ExtResource("8_yuri")
 
 [node name="SpeachPlayer" type="AudioStreamPlayer" parent="." unique_id=1628869334]
 unique_name_in_owner = true
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=953314994]
+layer = -2
+
+[node name="Control" type="Control" parent="Background" unique_id=1871604133]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Earth" type="TextureRect" parent="Background/Control" unique_id=619561568]
+layout_mode = 0
+offset_left = -295.99994
+offset_top = -23.999939
+offset_right = 1126.0
+offset_bottom = 776.00006
+scale = Vector2(3.49, 3.49)
+pivot_offset = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("35_5poiv")
+script = ExtResource("36_2cjbq")
+
+[node name="VostokInterior" type="TextureRect" parent="Background/Control" unique_id=1683037389]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.69, 0.69)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("35_c6pm6")
+
+[node name="Control" type="Control" parent="Background/Control" unique_id=1743221356]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Background/Control/Control" unique_id=770695978]
+modulate = Color(1, 1, 1, 0.6509804)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_cjqg0")
+
+[node name="GrayScale" type="TextureRect" parent="Background/Control/Control" unique_id=552187717]
+material = SubResource("ShaderMaterial_vchkt")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("39_cjqg0")
+
+[node name="BackgroundFade" type="ColorRect" parent="Background" unique_id=1783018980]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Ui" type="Control" parent="." unique_id=2093034647]
 layout_mode = 3

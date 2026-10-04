@@ -12,6 +12,7 @@ const COMMS_HOLD_TIME := 0.5
 @export var player: Character
 
 @onready var ui: Control = $Ui
+@onready var background_fade: ColorRect = $Background/BackgroundFade
 @onready var portrait: PanelContainer = %Portrait
 @onready var comms_cell: PanelContainer = %CommsCell
 @onready var comms_label: Label = %CommsLabel
@@ -66,6 +67,7 @@ func _end() -> void:
 	choices.clear()
 	var tween := create_tween()
 	tween.tween_property(ui, "modulate:a", 0.0, FADE_OUT_TIME).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	tween.parallel().tween_property(background_fade, "modulate:a", 1.0, FADE_OUT_TIME).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	await tween.finished
 	game_over.emit()
 	
