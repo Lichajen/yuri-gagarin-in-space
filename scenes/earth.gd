@@ -1,6 +1,6 @@
 extends TextureRect
 
-@export var spin_rate : float = PI/64
+@export var spin_rate : float = PI/120
 
 var distance_factor : float = 0.0
 
