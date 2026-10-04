@@ -103,9 +103,9 @@ func _play_anim_part(part:String, time:float, hold_time:float, backwards : bool 
 func _process(delta):
 	if ! is_playing_game:return
 	progress += speed * delta
-	if Input.is_action_just_pressed("ui_left"):
+	if Input.is_action_just_pressed("left"):
 		force_on_rocket -= push_strength
-	elif Input.is_action_just_pressed("ui_right"):
+	elif Input.is_action_just_pressed("right"):
 		force_on_rocket += push_strength
 	force_on_rocket += drift_effect * delta * sign(force_on_rocket)
 	rocket_position += force_on_rocket * delta

@@ -1023,6 +1023,23 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_ftuif"
 max_value = 1.0
 step = 0.001
 
+[node name="RichTextLabel" type="RichTextLabel" parent="HudLayer/Hud" unique_id=308162363]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 5.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.9490196, 0.8980392, 0.06666667, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/normal_font = ExtResource("2_yq4di")
+bbcode_enabled = true
+text = "
+[center][font_size=40]GUIDE COMRADE GAGARIN'S VESSEL WITH A/D OR ARROW KEYS
+[font_size=20]
+[font_size=30]KEEP IT FROM DRIFTING OFF COURSE!"
+
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=1499865399]
 
 [node name="GameBackground" type="Control" parent="BackgroundLayer" unique_id=1327138550]
